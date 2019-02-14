@@ -23,9 +23,9 @@ public class BubbleSort {
 	public static void main(String[] args) {
 		int[] array = { 24, 1, 78, 65, 3, 9, 67, 43 };
 		int[] sortedArray;
-		sortedArray = firstApproach(array);
+		// sortedArray = firstApproach(array);
 		// TODO - More better in performance.
-		// sortedArray = secondApproach(array);
+		sortedArray = secondApproach(array);
 		Arrays.stream(sortedArray).forEach(n -> System.out.println(n));
 
 		System.out.println("Comparisons [" + comparisons + "] and swaps [" + swaps + "]");
