@@ -13,11 +13,27 @@ public class TestQueueA {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		firstTest();
+		// testSimpleQueueImplemetedByArray();
+		testQueueImplemetedByDoubleEndedLinkedList();
 
 	}
 
-	private static void firstTest() {
+	private static void testQueueImplemetedByDoubleEndedLinkedList() {
+		QueueUsingDoubleEndedLinkedList<Integer> que = new QueueUsingDoubleEndedLinkedList<>();
+		que.enqueue(10);
+		que.enqueue(11);
+		que.enqueue(12);
+		que.enqueue(13);
+		que.enqueue(14);
+		System.out.println("Size : " + que.size());
+		System.out.println("Peek : " + que.peek());
+		System.out.println("Dequeue : " + que.dequeue());
+		System.out.println("Peek : " + que.peek());
+		System.out.println("Size : " + que.size());
+
+	}
+
+	private static void testSimpleQueueImplemetedByArray() {
 		QueueA<Integer> que = new QueueA<>(10);
 		que.enqueue(10);
 		que.enqueue(11);
