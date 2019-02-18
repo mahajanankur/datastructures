@@ -3,13 +3,15 @@
  */
 package com.sb.datastructures.linkedlist;
 
+import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
+
 /**
  * @author ankur.mahajan
  * @written 14-Feb-2019
  */
 public class LinkedListA<E> {
 
-	class Link {
+	private class Link {
 
 		public E data;
 
@@ -102,6 +104,19 @@ public class LinkedListA<E> {
 
 	public int size() {
 		return size;
+	}
+
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		Link current = first;
+		while (null != current) {
+			if (current.next != null)
+				builder.append(current.data).append(" -> ");
+			else
+				builder.append(current.data).append(" -> null");
+			current = current.next;
+		}
+		return builder.toString();
 	}
 
 }

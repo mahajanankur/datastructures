@@ -68,6 +68,7 @@ public class DoubleEndedLinkedList<E> {
 		return null;
 	}
 
+	// Same method as {@toString()}
 	public void displayAll() {
 		Link current = first;
 		while (current != null) {
@@ -89,5 +90,18 @@ public class DoubleEndedLinkedList<E> {
 	public E deleteLast() {
 		System.out.println("Implement Later");
 		return null;
+	}
+
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		Link current = first;
+		while (null != current) {
+			if (current.next != null)
+				builder.append(current.item).append(" -> ");
+			else
+				builder.append(current.item).append(" -> null");
+			current = current.next;
+		}
+		return builder.toString();
 	}
 }
