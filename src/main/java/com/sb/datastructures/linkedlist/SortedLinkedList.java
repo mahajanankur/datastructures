@@ -41,7 +41,7 @@ public class SortedLinkedList<E extends Number> {
 			current = current.next;
 		}
 
-		// It previous is null means item will go at 0 index first will be
+		// If previous is null means item will go at 0 index first will be
 		// newNode.
 		if (null == previous)
 			first = newNode;

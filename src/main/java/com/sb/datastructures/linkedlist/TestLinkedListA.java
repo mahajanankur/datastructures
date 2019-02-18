@@ -47,10 +47,20 @@ public class TestLinkedListA {
 		dd.deleteLast();
 		System.out.println("Delete Last, F2L : " + dd.toStringFromFirst());
 		System.out.println("Delete Last, L2F : " + dd.toStringFromLast());
-		
-		dd.deleteAfter(100);
+
+		dd.deleteAfter(0);
 		System.out.println("Delete After, F2L : " + dd.toStringFromFirst());
 		System.out.println("Delete After, L2F : " + dd.toStringFromLast());
+
+		ListIterator<Integer> listIterator = dd.getListIterator();
+
+		int loop = 0;
+		while (listIterator.hasNext()) {
+			if (loop++ == 1)
+				listIterator.addAfter(700);
+			System.out.print(listIterator.next() + " -> ");
+		}
+		System.out.println("\nAfter Insert, F2L : " + dd.toStringFromFirst());
 	}
 
 	private static void testSortedLinkedList() {

@@ -13,9 +13,9 @@ public class QueueA<E> {
 
 	private E[] arr;
 
-	private int front;
+	private int head;
 
-	private int rear;
+	private int tail;
 
 	private int size;
 
@@ -25,8 +25,8 @@ public class QueueA<E> {
 	public QueueA(int size) {
 		this.size = size;
 		arr = (E[]) new Object[size];
-		front = 0;
-		rear = -1;
+		head = 0;
+		tail = -1;
 		nItems = 0;
 	}
 
@@ -34,7 +34,7 @@ public class QueueA<E> {
 		if (isFull()) {
 			throw new RuntimeException("Queue is full.");
 		}
-		arr[++rear] = element;
+		arr[++tail] = element;
 		nItems++;
 	}
 
@@ -43,11 +43,11 @@ public class QueueA<E> {
 			throw new RuntimeException("Queue is empty.");
 		}
 		nItems--;
-		return arr[front++];
+		return arr[head++];
 	}
 
 	public E peek() {
-		return arr[front];
+		return arr[head];
 	}
 
 	public boolean isEmpty() {
@@ -63,11 +63,11 @@ public class QueueA<E> {
 		return nItems;
 	}
 
-	public int front() {
-		return front;
+	public int head() {
+		return head;
 	}
 
-	public int rear() {
-		return rear;
+	public int tail() {
+		return tail;
 	}
 }

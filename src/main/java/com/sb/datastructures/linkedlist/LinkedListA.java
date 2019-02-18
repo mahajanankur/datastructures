@@ -3,8 +3,6 @@
  */
 package com.sb.datastructures.linkedlist;
 
-import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
-
 /**
  * @author ankur.mahajan
  * @written 14-Feb-2019

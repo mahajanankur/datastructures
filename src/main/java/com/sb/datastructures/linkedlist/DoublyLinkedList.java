@@ -22,9 +22,10 @@ public class DoublyLinkedList<E> {
 		}
 	}
 
-	private Link first;
+	// Make them protected so that List Iterator class can use it.
+	Link first;
 
-	private Link last;
+	Link last;
 
 	private int size;
 
@@ -188,5 +189,9 @@ public class DoublyLinkedList<E> {
 			current = current.previous;
 		}
 		return builder.toString();
+	}
+
+	public ListIterator<E> getListIterator() {
+		return new ListIterator<>(this);
 	}
 }
