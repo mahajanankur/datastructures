@@ -18,7 +18,36 @@ public class TestHashTable {
 		// int newCapacity = (old << 1) + 1;
 		// System.out.println(newCapacity);
 		// testHashTableWithLinearProbing();
-		testHashTableWithQuadraticProbing();
+		// testHashTableWithQuadraticProbing();
+		// testHashTableWithDoubleHashing();
+		testHashTableWithSeparateChaining();
+
+	}
+
+	private static void testHashTableWithSeparateChaining() {
+		HashTableWithSeparateChaining<Integer, String> table = new HashTableWithSeparateChaining<>();
+		table.put(10, "ankur");
+		table.put(20, "jatin");
+		table.put(30, "atu");
+		table.put(10, "happu");
+
+		System.out.println("Delete Key 10 : " + table.delete(10));
+
+		System.out.println("Find Key 10 : " + table.find(10));
+
+	}
+
+	private static void testHashTableWithDoubleHashing() {
+		HashTableWithDoubleHashing<Integer, String> table = new HashTableWithDoubleHashing<>();
+		table.put(10, "ankur");
+		table.put(20, "jatin");
+		table.put(30, "atu");
+		table.put(10, "happu");
+
+		System.out.println("Delete Key 10 : " + table.delete(10));
+
+		System.out.println("Find Key 10 : " + table.find(10));
+
 	}
 
 	private static void testHashTableWithQuadraticProbing() {

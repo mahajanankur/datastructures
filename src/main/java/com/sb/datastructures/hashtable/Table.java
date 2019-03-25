@@ -42,4 +42,25 @@ public interface Table<K, V> {
 
 	}
 
+	/**
+	 * Horner’s expression states that an expression like
+	 * var4*n4 + var3*n3 + var2*n2 + var1*n1 + var0*n0
+	 * can be written as
+	 * (((var4*n + var3)*n + var2)*n + var1)*n + var0
+	 * 
+	 * @param key
+	 * @return hashFunction
+	 */
+	default int getBestHashFunction(K key) {
+		String str = key.toString();
+		int hashFuction = 0;
+
+		for (int i = 0; i < str.length(); i++) {
+			int letter = str.charAt(i);
+			hashFuction = (31 * hashFuction + letter) % capacity;
+		}
+
+		return hashFuction;
+	}
+
 }
