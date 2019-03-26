@@ -13,7 +13,7 @@ public class TowerOfHanoi {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int disks = 4;
+		int disks = 5;
 		char from = 'A';
 		char aux = 'B';
 		char to = 'C';
