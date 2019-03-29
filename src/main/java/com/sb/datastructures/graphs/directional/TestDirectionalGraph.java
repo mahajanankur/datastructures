@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.sb.datastructures.graphs.nondirectional;
+package com.sb.datastructures.graphs.directional;
 
 /**
  * @author ankur.mahajan
  * @written 26-Mar-2019
  */
-public class TestGraphA {
+public class TestDirectionalGraph {
 
 	/**
 	 * @param args
@@ -18,7 +18,7 @@ public class TestGraphA {
 	}
 
 	private static void testNonDirectedGraphA() {
-		GraphA<Character> graphA = new GraphA<>();
+		DirectionalGraph<Character> graphA = new DirectionalGraph<>();
 		// Add vertices.
 		graphA.addVertex('A');// 0
 		graphA.addVertex('B');// 1
@@ -42,12 +42,8 @@ public class TestGraphA {
 		graphA.addEdge(8, 9);
 
 		// Depth First Search
-		System.out.println("Depth First Search");
-		graphA.depthFirstSearch();
-		System.out.println("\nBreadth First Search");
-		graphA.breadthFirstSearch();
-		System.out.println("\nMinimal Spanning Tree");
-		graphA.minimalSpanningTree();
+		System.out.println("Topological Sort");
+		graphA.topologicalSorting();
 	}
 
 }

@@ -55,9 +55,9 @@ public class GraphA<T> {
 	}
 
 	/**
-	 * The depth-first search uses a stack to remember where it should go when
-	 * it reaches a dead end. This algorithm acts as though it wants to get as
-	 * far away from the starting point as quickly as possible.
+	 * The depth-first search uses a stack to remember where it should go when it
+	 * reaches a dead end. This algorithm acts as though it wants to get as far away
+	 * from the starting point as quickly as possible.
 	 */
 	public void depthFirstSearch() {
 		Vertex<?> firstVertex = verticesArray[0];
@@ -76,8 +76,7 @@ public class GraphA<T> {
 			int adjVertexIndex = findAdjacentUnvisitedVertex(stack.peek());
 			if (adjVertexIndex == -1) {
 				stack.pop();
-			}
-			else {
+			} else {
 				// Mark the vertex as visited.
 				verticesArray[adjVertexIndex].setVisited(true);
 				displayVertex(adjVertexIndex);
@@ -96,11 +95,10 @@ public class GraphA<T> {
 	}
 
 	/**
-	 * The breadth-first search has an interesting property: It first finds all
-	 * the vertices that are one edge away from the starting point, then all the
-	 * vertices that are two edges away, and so on. This is useful if you’re
-	 * trying to find the shortest path from the starting vertex to a given
-	 * vertex.
+	 * The breadth-first search has an interesting property: It first finds all the
+	 * vertices that are one edge away from the starting point, then all the
+	 * vertices that are two edges away, and so on. This is useful if you’re trying
+	 * to find the shortest path from the starting vertex to a given vertex.
 	 */
 	public void breadthFirstSearch() {
 		Vertex<?> firstVertex = verticesArray[0];
@@ -120,8 +118,7 @@ public class GraphA<T> {
 
 			if (adjacentUnvisitedVertex == -1) {
 				queue.remove();
-			}
-			else {
+			} else {
 				// Mark it visited
 				verticesArray[adjacentUnvisitedVertex].setVisited(true);
 				displayVertex(adjacentUnvisitedVertex);
@@ -134,6 +131,37 @@ public class GraphA<T> {
 				verticesArray[i].setVisited(false);
 			}
 		}
+	}
+
+	/**
+	 * 
+	 */
+	public void minimalSpanningTree() {
+		// Start from the first vertex and mark it visited
+		verticesArray[0].setVisited(true);
+		stack.push(0);
+
+		while (!stack.isEmpty()) {
+			int current = stack.peek();
+			int adjacentUnvisitedVertex = findAdjacentUnvisitedVertex(current);
+			// If not unvisited adjacent element found pop from stack. Else push.
+			if (adjacentUnvisitedVertex == -1) {
+				stack.pop();
+			} else {
+				verticesArray[adjacentUnvisitedVertex].setVisited(true);
+				stack.push(adjacentUnvisitedVertex);
+				displayVertex(current);
+				displayVertex(adjacentUnvisitedVertex);
+				System.out.print(" ");
+			}
+		}
+		// Mark the vertices visited flag to false again after use.
+		for (int i = 0; i < verticesArray.length; i++) {
+			if (null != verticesArray[i]) {
+				verticesArray[i].setVisited(false);
+			}
+		}
+
 	}
 
 	/**
@@ -156,7 +184,7 @@ public class GraphA<T> {
 	 * @param index
 	 */
 	private void displayVertex(int index) {
-		System.out.println(verticesArray[index].content.toString());
+		System.out.print(verticesArray[index].content.toString());
 	}
 
 	/**
@@ -190,8 +218,7 @@ public class GraphA<T> {
 		}
 
 		/**
-		 * @param content
-		 *            the content to set
+		 * @param content the content to set
 		 */
 		public void setContent(T content) {
 			this.content = content;
@@ -205,8 +232,7 @@ public class GraphA<T> {
 		}
 
 		/**
-		 * @param visited
-		 *            the visited to set
+		 * @param visited the visited to set
 		 */
 		public void setVisited(boolean visited) {
 			this.visited = visited;
