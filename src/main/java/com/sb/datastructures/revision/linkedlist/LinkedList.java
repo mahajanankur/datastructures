@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sb.datastructures.linkedlist.revision;
+package com.sb.datastructures.revision.linkedlist;
 
 /**
  * @author ankur.mahajan
