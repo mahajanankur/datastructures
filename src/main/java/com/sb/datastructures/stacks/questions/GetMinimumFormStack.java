@@ -57,7 +57,7 @@ public class GetMinimumFormStack {
 			return true;
 		}
 
-		// While push (2*element – minEle)
+		// While push (2*element – minimum)
 		boolean pushMinimum(int element) {
 			Integer inserted = null;
 			if (isFull()) {
