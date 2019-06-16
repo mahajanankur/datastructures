@@ -66,7 +66,15 @@ public class HashMap<K, V> implements Map<K, V> {
 	}
 
 	public V get(K key) {
-		return null;
+		int hashfunction = Map.super.hashfunction(key, CAPACITY);
+		HashMap<K, V>.LinkedList linkedList = entryArray[hashfunction];
+		if (null == linkedList) {
+			throw new RuntimeException("Key not present.");
+		}
+
+		Entry<K, V> entry = linkedList.get(key);
+
+		return null != entry ? entry.value : null;
 	}
 
 	public int size() {

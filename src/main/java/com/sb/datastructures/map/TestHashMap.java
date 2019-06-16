@@ -25,6 +25,7 @@ public class TestHashMap {
 		map.put(13, "i");
 
 		System.out.println(map.size());
+		System.out.println(map.get(1));
 
 		// TestHashMap test = new TestHashMap();
 		// for (int i = 0; i < 100; i++) {
