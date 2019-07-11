@@ -11,17 +11,21 @@ import java.util.Arrays;
  */
 public class BinarySearch {
 
+	private static int comparisions = 0;
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] arr = {10, 28, 5, 45, 78, 87, 4, 0, 67, 8, 10, 19, 56};
-		int n = 9;
+		// int[] arr = {10, 28, 5, 45, 78, 87, 4, 0, 67, 8, 10, 19, 56};
+		int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		int n = 8;
 		int high = arr.length - 1;
 		int low = 0;
 		Arrays.sort(arr);
 		int index = firstApproach(arr, low, high, n);
 		System.out.println(index);
+		System.out.println("Number of comarisons : " + comparisions);
 
 		// secondApproach(arr, low, high, n);
 	}
@@ -59,9 +63,11 @@ public class BinarySearch {
 				return mid;
 			} else if (arr[mid] > number) {
 				high = mid - 1;
+				comparisions++;
 				return firstApproach(arr, low, high, number);
 			} else if (arr[mid] < number) {
 				low = mid + 1;
+				comparisions++;
 				return firstApproach(arr, low, high, number);
 			}
 		}

@@ -24,6 +24,7 @@ public class HashMap<K, V> implements Map<K, V> {
 
 	}
 
+	// Buckets.
 	private LinkedList[] entryArray;
 
 	private int size;

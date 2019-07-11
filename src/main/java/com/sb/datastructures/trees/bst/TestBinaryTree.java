@@ -44,7 +44,12 @@ public class TestBinaryTree {
 		// System.out.println(tree.findMaximum());
 		// System.out.println(tree.findMinimum());
 		System.out.println(tree.delete(45));
+		System.out.println("\n PREORDER");
+		tree.traverse(1);
+		System.out.println("\n INORDER");
 		tree.traverse(2);
+		System.out.println("\n POSTORDER");
+		tree.traverse(3);
 	}
 
 }
