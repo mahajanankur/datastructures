@@ -22,5 +22,6 @@ Then we also have some complex data structures, which are used to store large an
 
 ![picture alt](https://media.geeksforgeeks.org/wp-content/uploads/20191010170332/Untitled-Diagram-183.png "data-structures")
 
+
 All these data structures allow us to perform different operations on data. We select these data structures based on which type of operation is required.
 
