@@ -18,7 +18,7 @@ public class TestGraphA {
 	}
 
 	private static void testNonDirectedGraphA() {
-		GraphA<Character> graphA = new GraphA<>();
+		GraphWithAdjacencyMatrix<Character> graphA = new GraphWithAdjacencyMatrix<>();
 		// Add vertices.
 		graphA.addVertex('A');// 0
 		graphA.addVertex('B');// 1

@@ -7,7 +7,7 @@ package com.sb.datastructures.graphs.nondirectional;
  * @author ankur.mahajan
  * @written 25-Mar-2019
  */
-public class GraphA<T> {
+public class GraphWithAdjacencyMatrix<T> {
 
 	private int MAX_GRAPH_SIZE = 20;
 
@@ -21,7 +21,7 @@ public class GraphA<T> {
 
 	private int nVertices;
 
-	public GraphA() {
+	public GraphWithAdjacencyMatrix() {
 		nVertices = 0;
 		verticesArray = new Vertex<?>[MAX_GRAPH_SIZE];
 		adjacencyMatrix = new boolean[MAX_GRAPH_SIZE][MAX_GRAPH_SIZE];
